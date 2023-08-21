@@ -38,6 +38,10 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    if current_user.id == @game.user_id
+      @game.destroy
+      redirect_to games_path, notice: "Game was successfully destroyed.", status: :see_other
+    end
   end
 
   private
