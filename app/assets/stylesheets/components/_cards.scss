@@ -22,6 +22,13 @@
       text-transform: uppercase;
     }
 
+    p {
+      color:black;
+      font-family: 'Anonymous Pro', monospace;
+      display: block;
+      padding: 7px
+    }
+
     a {
       background-color: white;
       font-family: 'Poppins', sans-serif;
@@ -48,26 +55,31 @@
  }
 
 .index-card {
+  background-color: white;
   box-shadow: 8px 8px 1px #00ed71;
   padding: 16px;
   text-align: center;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  height: 150px;
-  margin: 20px 35px 35px 20px;
-  justify-content: center;
   display: inline-block;
+  justify-content: space-between;
+  height: 400px;
+  width: auto;
+  margin: 15px 30px 30px 15px;
 
     h6 {
       color: black;
       font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      font-size: 22px;
+      font-weight: 700;
+      font-size: 16px;
       display: block;
       margin: 4px 2px;
       text-transform: uppercase;
+    }
+
+    p {
+      color:black;
+      font-family: 'Anonymous Pro', monospace;
+      display: block;
+      padding: 7px
     }
 
     a {
