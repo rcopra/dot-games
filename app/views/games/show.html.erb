@@ -13,20 +13,15 @@
   </p>
 </div>
 
-<div>
+<div class="container">
+  <%= simple_form_for [@game, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+    <%= f.button :submit %>
+  <% end %>
 
-<%= simple_form_for [@game, @booking] do |f| %>
-  <%= f.input :start_date, as: :date, start_date: Date.today,
-                              end_date: Date.today.year + 1,
-                              order: [:day, :month, :year] %>
-  <%= f.input :end_date, as: :date, start_date: Date.today.day + 1,
-                              end_date: Date.today.day + 12,
-                              order: [:day, :month, :year] %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
 
-  <%= link_to "Back to games", games_path %>
+    <%= link_to "Back to games", games_path %>
 
-  <%= button_to "Destroy this game", @game, method: :delete %>
-
+    <%= button_to "Destroy this game", @game, method: :delete %>
 </div>

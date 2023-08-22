@@ -1,27 +1,21 @@
 class BookingsController < ApplicationController
-before_action
-# simple form is necessary for new page -
-# form should be directly on the show page
+  before_action :authenticate_user!
 
 def create
-  raise
-  @game = Game.find(params[:id])
-  if user_signed_in?
-    @booking = Booking.new()
-    @booking.game = @game
-    @booking.user = current_user
-    if @booking.save
-      redirect_to @game, notice: "booking was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+  @game = Game.find(params[:game_id])
+  @booking = Booking.new(booking_params)
+  @booking.game = @game
+  @booking.user = current_user
+  if @booking.save
+    redirect_to @game, notice: "Booking was successfully created."
+  else
+    render :new, status: :unprocessable_entity
   end
 end
 
-  private
+private
 
-  # def booking_params
-  #   params.require(:booking).permit(:start_date, :end_date)
-  # end
-
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
 end
