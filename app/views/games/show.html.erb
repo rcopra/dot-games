@@ -11,16 +11,21 @@
     <strong>Price:</strong>
     <%= @game.price %>
   </p>
+  <%= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
 </div>
-<%= cl_image_tag("lsuz8oonp5edmvpkejrg",
-      width: 400, height: 300, crop: :fill) %>
-<div class="container">
-  <%= simple_form_for [@game, @booking] do |f| %>
-    <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-    <%= f.button :submit %>
-  <% end %>
 
+<div class="container">
+  <div data-controller="toggle" class="my-5">
+    <button class="btn btn-primary" data-action="click->toggle#fire">Book a game</button>
+
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= simple_form_for [@game, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
 
     <%= link_to "Back to games", games_path %>
 
