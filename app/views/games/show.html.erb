@@ -12,7 +12,8 @@
     <%= @game.price %>
   </p>
 </div>
-
+<%= cl_image_tag("lsuz8oonp5edmvpkejrg",
+      width: 400, height: 300, crop: :fill) %>
 <div class="container">
   <%= simple_form_for [@game, @booking] do |f| %>
     <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
