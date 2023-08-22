@@ -1,3 +1,32 @@
-<%= @game.name %>
+<div id="<%= dom_id @game %>">
+  <p>
+    <strong>Name:</strong>
+    <%= @game.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @game.description %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @game.price %>
+  </p>
+</div>
 
-<%= button_to "Destroy this game", @game, method: :delete %>
+<div>
+
+<%= simple_form_for [@game, @booking] do |f| %>
+  <%= f.input :start_date, as: :date, start_date: Date.today,
+                              end_date: Date.today.year + 1,
+                              order: [:day, :month, :year] %>
+  <%= f.input :end_date, as: :date, start_date: Date.today.day + 1,
+                              end_date: Date.today.day + 12,
+                              order: [:day, :month, :year] %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+  <%= link_to "Back to games", games_path %>
+
+  <%= button_to "Destroy this game", @game, method: :delete %>
+
+</div>
