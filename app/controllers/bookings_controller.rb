@@ -1,30 +1,21 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
 
-  def index
-    @bookings = Booking.all
+def create
+  @game = Game.find(params[:game_id])
+  @booking = Booking.new(booking_params)
+  @booking.game = @game
+  @booking.user = current_user
+  if @booking.save
+    redirect_to @game, notice: "Booking was successfully created."
+  else
+    render :new, status: :unprocessable_entity
   end
+end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
+private
 
-  def new
-
-  end
-
-  def create
-
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
