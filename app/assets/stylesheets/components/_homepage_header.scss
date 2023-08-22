@@ -1,5 +1,5 @@
 .header {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('header.jpg'));
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('/app/assets/images/442499.jpg'));
   height: 400px;
   width: 100%;
   background-size: cover;
@@ -14,7 +14,7 @@
   font-weight: 700;
   font-size: 60px;
   background-color:rgba(0,0,0,0.8);
-  padding: 15px;
+  padding: 9px;
   display: block;
   margin: 4px 2px;
 }

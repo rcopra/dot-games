@@ -1,3 +1,5 @@
-<% @games.each do |game|%>
-<%= game.name %>
-<%end%>
+<div class="index-grid">
+  <% @games.each do |game| %>
+    <%= render "index_card", game: game %>
+  <% end %>
+</div>
