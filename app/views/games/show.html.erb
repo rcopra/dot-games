@@ -1,3 +1,27 @@
-<%= @game.name %>
+<div id="<%= dom_id @game %>">
+  <p>
+    <strong>Name:</strong>
+    <%= @game.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @game.description %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @game.price %>
+  </p>
+</div>
 
-<%= button_to "Destroy this game", @game, method: :delete %>
+<div class="container">
+  <%= simple_form_for [@game, @booking] do |f| %>
+    <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+    <%= f.button :submit %>
+  <% end %>
+
+
+    <%= link_to "Back to games", games_path %>
+
+    <%= button_to "Destroy this game", @game, method: :delete %>
+</div>
