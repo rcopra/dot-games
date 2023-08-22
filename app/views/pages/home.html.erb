@@ -1,9 +1,8 @@
-
 <div class="body">
-  <div class="cover">
+  <div class="header">
       <h1 class="text-uppercase">90s Videogames</h1>
       <p>Rent the games from your childhood</p>
-      <a class="text-uppercase" href="#">Browse all games</a>
+        <%= link_to "Browse all games", games_path %>
     </div>
   </div>
 
@@ -11,12 +10,12 @@
     <div class="homepage-card">
       <h6>Find your game</h6>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="text-uppercase" href="#">Browse all games</a>
+      <%= link_to "Browse all games", games_path %>
     </div>
     <div class="homepage-card">
       <h6>Sell your game</h6>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a class="text-uppercase" href="#">Sell a game</a>
+       <%= link_to "Sell games", games_path %>
     </div>
   </div>
 </div>
