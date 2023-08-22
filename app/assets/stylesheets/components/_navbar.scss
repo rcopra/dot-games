@@ -1,12 +1,33 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  background: black;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar .navbar-brand img {
   width: 40px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.navbar p {
+  color: #f700c6;
+}
+
+.navbar a {
+  color:#f700c6;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+  color: #00ed71;
+  }
 }
