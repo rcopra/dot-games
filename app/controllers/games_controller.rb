@@ -3,6 +3,13 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @markers = @games.geocoded.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { game: game })
+      }
+    end
   end
 
   def show
