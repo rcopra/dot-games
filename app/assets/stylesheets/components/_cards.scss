@@ -46,8 +46,6 @@
       &:hover {
         color: rgb(0, 0, 0);
         text-decoration: underline;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
         transition: .3s;
         color:#f700c6
       }
@@ -83,11 +81,11 @@
     }
 
     a {
-      background-color: white;
+      background-color: black;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       border: none;
-      color:#f700c6;
+      color: white;;
       padding: 10px;
       text-align: center;
       text-decoration: none;
@@ -95,27 +93,13 @@
       font-size: 12px;
       margin: 4px 2px;
       text-transform: uppercase;
-
-      &:hover {
-        color: rgb(0, 0, 0);
-        text-decoration: underline;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        transition: .3s;
-        color:#f700c6
-      }
    }
+
+
 }
 
-
-
-
-
-
-  // @media screen and (max-width: 600px) {
-  //   .column {
-  //     width: 80%;
-  //     display: block;
-  //     margin-bottom: 20px;
-  //   }
-  // }
+.index-card:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 10px 10px 2px #f700c6;
+  color:#f700c6
+}
