@@ -58,18 +58,23 @@
   padding: 16px;
   text-align: center;
   display: inline-block;
-  justify-content: space-between;
+  // justify-content: space-between;
+  bottom: 0;
+  left: 0;
   height: 400px;
   width: auto;
-  margin: 15px 30px 30px 15px;
+  margin: 0px 30px 30px 15px;
 
+}
+
+.index-card-info {
     h6 {
       color: black;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       display: block;
-      margin: 4px 2px;
+      margin-top: 10px;
       text-transform: uppercase;
     }
 
@@ -77,7 +82,8 @@
       color:black;
       font-family: 'Anonymous Pro', monospace;
       display: block;
-      padding: 7px
+      font-size: 12px;
+      margin: 0px;
     }
 
     a {
@@ -85,21 +91,102 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       border: none;
-      color: white;;
-      padding: 10px;
+      color: white;
+      padding: 8px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 12px;
       margin: 4px 2px;
       text-transform: uppercase;
-   }
 
 
+      &:hover {
+        background-color: white;
+        box-shadow: 6px 6px 1px black;
+        color: black;
+        transition: .3s;
+    }
+  }
 }
 
 .index-card:hover {
   transform: scale(1.02) perspective(0px);
   box-shadow: 10px 10px 2px #f700c6;
   color:#f700c6
+}
+
+.index-card__img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
+
+.show-card {
+  background-color: white;
+  box-shadow: 8px 8px 1px #00ed71;
+  padding: 16px;
+  text-align: center;
+  display: inline-block;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  height: 600px;
+  width: 800px;
+  // margin: 0px 30px 30px 15px;
+
+}
+
+.show-card-info {
+    h6 {
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      display: block;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color:black;
+      font-family: 'Anonymous Pro', monospace;
+      display: block;
+      font-size: 16px;
+      margin: 0px;
+    }
+
+    a {
+      background-color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      border: none;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      text-transform: uppercase;
+
+
+      &:hover {
+        background-color: white;
+        box-shadow: 6px 6px 1px black;
+        color: black;
+        transition: .3s;
+    }
+  }
+}
+
+.show-card__img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }

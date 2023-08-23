@@ -1,10 +1,11 @@
- <div class="index-card">
-    <§>
+<div class="index-card"><img class="index-card__img" src="https://cdn.90splease.com/item-images/mario-kart-64.jpg" alt="mario">
+  <div class="index-card-info">
     <h6>Title:</h6>
-    <p><%= link_to game.name, game %></p>
+    <p><%= game.name %></p>
     <h6>Description:</h6>
     <p><%= game.description %></p>
     <h6>Price:</h6>
     <p><%= game.price %></p>
-     <a href="#">More info</a>
+      <%= link_to "More info", game_path(game) %>
   </div>
+</div>
