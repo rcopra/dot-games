@@ -8,20 +8,86 @@ User.create( email: "lister@example.com", password: "123456")
 User.create( email: "renter@example.com", password: "123456")
 
 games = [
-  { name: "The Adventure Quest", description: "Embark on an epic journey to save the kingdom.", price: 29.99, user_id: User.first.id },
-  { name: "Space Explorers", description: "Explore the vast cosmos and discover new worlds.", price: 19.99, user_id: User.first.id },
-  { name: "Fantasy Realms", description: "Build your own fantasy realm and wage epic battles.", price: 39.99, user_id: User.first.id },
-  { name: "Mystic Runes", description: "Uncover the secrets of ancient runes in this mystical adventure.", price: 24.99, user_id: User.first.id },
-  { name: "Cyberpunk Revolution", description: "Navigate a dystopian future in this action-packed cyberpunk game.", user_id: User.first.id },
-  { name: "Pirate's Cove", description: "Sail the high seas, plunder treasure, and become a legendary pirate.", price: 34.99, user_id: User.first.id },
-  { name: "Time Traveler's Odyssey", description: "Embark on a time-traveling adventure through history.", price: 29.99, user_id: User.first.id },
-  { name: "Kingdom Builder", description: "Construct and rule your own kingdom in this strategic game.", price: 39.99, user_id: User.first.id },
-  { name: "Racing Rivals", description: "Compete against rivals in high-speed races across various tracks.", price: 19.99, user_id: User.first.id },
-  { name: "Underwater Odyssey", description: "Dive into the depths and explore the wonders of the ocean.", price: 27.99, user_id: User.first.id },
-  { name: "Galactic Conquest", description: "Conquer the galaxy by building an interstellar empire.", price: 44.99, user_id: User.first.id },
-  { name: "Sorcerer's Apprentice", description: "Learn the arcane arts and become a powerful sorcerer.", price: 32.99, user_id: User.first.id },
-  { name: "Survival Instinct", description: "Test your survival skills in a post-apocalyptic world.", price: 22.99, user_id: User.first.id },
+  {
+    name: "Super Mario World",
+    description: "Join Mario in his quest to rescue Princess Peach in this classic platformer.",
+    release_date: Date.new(1990, 11, 21),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "The Legend of Zelda: A Link to the Past",
+    description: "Embark on a grand adventure as Link to save Princess Zelda and defeat Ganon.",
+    release_date: Date.new(1991, 11, 21),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Sonic the Hedgehog",
+    description: "Help Sonic defeat Dr. Robotnik and his evil plans to take over the world.",
+    release_date: Date.new(1991, 6, 23),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Street Fighter II",
+    description: "Choose your fighter and battle against opponents from around the world.",
+    release_date: Date.new(1991, 2, 6),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Donkey Kong Country",
+    description: "Join Donkey Kong and Diddy Kong in their quest to reclaim their stolen bananas.",
+    release_date: Date.new(1994, 11, 21),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Mortal Kombat",
+    description: "Test your might in this brutal fighting game with iconic characters and fatalities.",
+    release_date: Date.new(1992, 10, 8),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Final Fantasy VII",
+    description: "Embark on a journey with Cloud and his allies to save the planet from the evil Sephiroth.",
+    release_date: Date.new(1997, 1, 31),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Pokémon Red and Blue",
+    description: "Catch 'em all and become a Pokémon Master in the Kanto region.",
+    release_date: Date.new(1996, 2, 27),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Tetris",
+    description: "Arrange falling blocks to create lines and clear the screen in this iconic puzzle game.",
+    release_date: Date.new(1984, 6, 6),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  },
+  {
+    name: "Metal Gear Solid",
+    description: "Infiltrate enemy bases and uncover a complex conspiracy in this stealth-action game.",
+    release_date: Date.new(1998, 10, 21),
+    cover_art_url: "placeholder",
+    price: rand(10.0..50.0).round(2)
+  }
 ]
 
-games.each { |game| Game.create!(game) }
+games.each do |game|
+  Game.create!(
+    name: game[:name],
+    description: game[:description],
+    release_date: game[:release_date],
+    cover_art_url: game[:cover_art_url],
+    price: game[:price]
+  )
+end
+
 puts "Seeds planted 🌱"
