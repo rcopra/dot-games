@@ -1,36 +1,42 @@
-<div id="<%= dom_id @game %>">
-  <p>
-    <img src="<%= @game.poster_url %>">
-  </p>
-  <p>
-    <strong>Name:</strong>
-    <%= @game.name %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @game.description %>
-  </p>
-  <p>
-    <strong>Price:</strong>
-    <%= @game.price %>
-  </p>
-<%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
+
+<div class="header" class="header-grid" >
+  <h1>hello</h1>
+   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 </div>
 
-<div class="container">
-  <div data-controller="toggle" class="my-5">
-    <button class="btn btn-primary" data-action="click->toggle#fire">Book a game</button>
-
-    <div data-toggle-target="togglableElement" class="d-none">
-      <%= simple_form_for [@game, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-        <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-        <%= f.button :submit %>
-      <% end %>
+<div class="wrapper">
+  <div class="sidebar">
+    <ul>
+     <%= link_to "Back to games", games_path %>
+     <%= link_to "Destroy this game", @game, method: :delete %>
+    </ul>
+  </div>
+<div class="content">
+<div class="show-card">    <img class="show-card__img" src="<%= @game.poster_url %>" alt="mario">
+  <div id="<%= dom_id @game %>">
+    <div class="show-card-info">
+      <h6>Title:</h6>
+      <p><%= @game.name %></p>
+      <h6>Description:</h6>
+      <p><%= @game.description %></p>
+      <h6>Price:</h6>
+      <p><%= @game.price %></p>
+    </div>
+    <%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
+  </div>
+  <div class="container">
+    <div data-controller="toggle" class="my-5">
+      <button class="btn btn-primary" data-action="click->toggle#fire">Book a game</button>
+       <div data-toggle-target="togglableElement" class="d-none">
+        <%= simple_form_for [@game, @booking] do |f| %>
+          <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+          <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
     </div>
   </div>
-
-    <%= link_to "Back to games", games_path %>
-
-    <%= button_to "Destroy this game", @game, method: :delete %>
+</div>
+  </div>
+  <%# <div class="footer">Footer</div> %>
 </div>
