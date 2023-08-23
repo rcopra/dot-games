@@ -24,7 +24,6 @@
     </div>
     <%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
   </div>
-  <div class="container">
     <div data-controller="toggle" class="my-5">
       <button class="btn btn-primary" data-action="click->toggle#fire">Book a game</button>
        <div data-toggle-target="togglableElement" class="d-none">
@@ -35,7 +34,6 @@
         <% end %>
       </div>
     </div>
-  </div>
 </div>
   </div>
   <%# <div class="footer">Footer</div> %>
