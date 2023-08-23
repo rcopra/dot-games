@@ -1,5 +1,5 @@
 .homepage-header {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('/app/assets/images/442499.jpg'));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),10, url(asset_path('442499.jpg'));
   height: 400px;
   width: 100%;
   background-size: cover;
@@ -12,7 +12,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 60px;
-    background-color:rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 9px;
     display: block;
     margin: 4px 2px;
@@ -22,7 +22,7 @@
     color: white;
     font-size: 25px;
     font-family: 'Anonymous Pro', monospace;
-    background-color:rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     display: block;
     margin: 4px 2px;
     padding: 8px;
@@ -41,5 +41,41 @@
     font-size: 24px;
     margin: 4px 2px;
     box-shadow: 8px 8px 1px #00ed71;
+
+    &:hover {
+      transition: .3s;
+      color: #f700c6;
+      box-shadow: 8px 8px 1px #f700c6;
+    }
+  }
+}
+
+.header {
+  height: 75px;
+  padding: 0px 50px 0px 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-position: center;
+  // position: absolute;
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+
+  h1 {
+    color: white;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+    font-size: 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 4px 2px;
+    // width: 80%;
+  }
+
+  p {
+    color: white;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
+    // width: 80%;
   }
 }
