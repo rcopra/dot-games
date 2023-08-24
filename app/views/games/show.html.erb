@@ -7,6 +7,7 @@
 <div class="wrapper">
   <div class="sidebar">
     <ul>
+     <%= link_to "Edit the game", edit_game_path(@game) %>
      <%= link_to "Back to games", games_path %>
      <%= link_to "Destroy this game", @game, method: :delete %>
     </ul>
