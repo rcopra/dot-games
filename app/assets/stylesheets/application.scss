@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "config/sweetalert_variables";
 
 // External libraries
 @import "bootstrap";
@@ -15,9 +16,9 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
 
-/* Custom designs */
-@import url(components/banner.css);
-@import url(components/buttons.css);
-@import url(components/cards.css);
-@import url(components/container.css);
-@import url(components/footer.css);
+// /* Custom designs */
+// @import url(components/banner.css);
+// @import url(components/buttons.css);
+// @import url(components/cards.css);
+// @import url(components/container.css);
+// @import url(components/footer.css);

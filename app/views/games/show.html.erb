@@ -6,14 +6,14 @@
 <div class="wrapper">
   <div class="sidebar">
     <ul>
-     <%= link_to "Edit the game", edit_game_path(@game) %>
-     <%= link_to "Back to games", games_path %>
-     <%= link_to "Destroy this game", @game, method: :delete %>
-     <div style="width: 300px; height: 300px"
+      <%= link_to "Edit the game", edit_game_path(@game) %>
+      <%= link_to "Back to games", games_path %>
+      <%= link_to "Destroy this game", @game, method: :delete %>
+      <div style="width: 300px; height: 300px"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
+      </div>
     </ul>
   </div>
   <div class="content">
@@ -30,10 +30,21 @@
         </div>
         <%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
       </div>
-      <div data-controller="toggle" class="my-5 ">
+      <div data-controller="toggle" class="my-5">
         <a class="simple-form" data-action="click->toggle#fire">Book a game</a>
-        <div class="simple-form" data-toggle-target="togglableElement" class="d-none">
-          <%= simple_form_for [@game, @booking] do |f| %>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <%= simple_form_for [@game, @booking], html: {
+            data: {
+              controller: "alert",
+              alert_title_value: "Congratulations!! 🎉",
+              alert_html_value: "You made a booking for ",
+              alert_confirm_button_text_value: "Thank you!",
+              alert_show_cancel_button_value: true,
+              alert_cancel_button_text_value: "Cancel",
+              action: "submit->alert#initSweetalert",
+              turbo: false
+            }
+          } do |f| %>
             <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: Date.today.strftime("%Y-%m-%d") } %>
             <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: (Date.today + 5.days).strftime("%Y-%m-%d") } %>
             <%= f.button :submit %>
@@ -41,6 +52,8 @@
         </div>
       </div>
     </div>
+
+
 </div>
   </div>
   <%# <div class="footer">Footer</div> %>
