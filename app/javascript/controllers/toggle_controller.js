@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["togglableElement"]
 
   connect() {
-    this.togglableElementTarget.classList.add("d-none")
   }
 
   fire() {
