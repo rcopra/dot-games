@@ -1,4 +1,9 @@
-<div class="index-card"><img class="index-card__img" src="<%= game.poster_url %>" alt="mario">
+<div class="index-card">
+<% if game.photo.attached? %>
+<%= cl_image_tag(game.photo.key) %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
   <div class="index-card-info">
     <h6>Title:</h6>
     <p><%= game.name %></p>

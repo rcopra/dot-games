@@ -1,27 +1,86 @@
 
+.simple-form-booking  {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  border: 3px;
+  border-color: #f700c6;
+  color: black;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px 2px black;
+  width: 500px;
+  text-transform: uppercase;
+
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      font-weight: 400;
+      transition: .3s;
+  }
+}
+}
+
+
+
 .simple-form  {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    border: none;
-    color: black;
+    border: 3px;
+    border-color: #f700c6;
+    color: white;
     padding: 8px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     box-shadow: 2px 2px 2px 2px black;
-    width: 400px;
+    width: 500px;
     text-transform: uppercase;
-    // min-height: calc(100vh - 575px);
-
-    &:hover {
-      background-color: white;
-      box-shadow: 6px 6px 1px black;
-      color: black;
-      transition: .3s;
+    min-height: 100vh;
 
     a {
       color: white;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: 400;
+        transition: .3s;
     }
+  }
+  .btn {
+    color: white;
+    background-color: lightgrey;
+  }
+
+
+}
+
+.search-form {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  border: none;
+  color: black;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 2px 2px 2px black;
+  width: 400px;
+  text-transform: uppercase;
+
+  a {
+    color:#f700c6;
+  }
+
+  &:hover {
+    color: black;
+    transition: .3s;
   }
 }

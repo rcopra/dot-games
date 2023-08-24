@@ -1,4 +1,4 @@
-# db/seeds.rb
+require 'open-uri'
 
 puts "Cleaning up database..."
 Booking.destroy_all
@@ -92,15 +92,15 @@ games = [
   }
 ]
 
-games.each do |game|
-  Game.create!(
-    name: game[:name],
-    description: game[:description],
-    poster_url: game[:poster_url],
-    price: game[:price],
-    user_id: game[:user_id],
-    address: game[:address]
-  )
+games.each do |game_data|
+  game = Game.new(game_data.except(:poster_url))
+
+  if game_data[:poster_url].present?
+    game.save!
+    game.photo.attach(io: URI.open(game_data[:poster_url]), filename: "poster.png")
+  else
+    game.save!
+  end
 end
 
 puts "Seeds planted 🌱"
