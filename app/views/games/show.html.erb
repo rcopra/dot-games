@@ -1,4 +1,4 @@
-<div class="header header-grid">
+<div class="header">
   <h1>hello</h1>
   <p>Welcome to .games! Step back in time with our nostalgic 90's video game rentals. Immerse yourself in the pixelated wonderland of classic gaming, right from the comfort of your own home.</p>
 </div>
@@ -6,9 +6,14 @@
 <div class="wrapper">
   <div class="sidebar">
     <ul>
-      <%= link_to "Edit the game", edit_game_path(@game) %>
-      <%= link_to "Back to games", games_path %>
-      <%= link_to "Destroy this game", @game, method: :delete %>
+     <%= link_to "Edit the game", edit_game_path(@game) %>
+     <%= link_to "Back to games", games_path %>
+     <%= link_to "Destroy this game", @game, method: :delete %>
+     <div style="width: 300px; height: 300px"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+     </div>
     </ul>
   </div>
   <div class="content">
@@ -36,13 +41,7 @@
         </div>
       </div>
     </div>
-
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
+</div>
   </div>
   <%# <div class="footer">Footer</div> %>
 </div>
