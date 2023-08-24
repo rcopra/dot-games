@@ -5,8 +5,8 @@ class GamesController < ApplicationController
     @games = Game.all
     if params[:query].present?
       sql_subquery = <<~SQL
-        games.name @@ :query
-        OR games.description @@ :query
+        games.name ILIKE :query
+        OR games.description ILIKE :query
       SQL
       @games = @games.where(sql_subquery, query: "%#{params[:query]}%")
     end
