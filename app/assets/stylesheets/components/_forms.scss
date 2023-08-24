@@ -1,6 +1,5 @@
 
 .simple-form  {
-    background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     border: none;
@@ -13,7 +12,8 @@
     box-shadow: 2px 2px 2px 2px black;
     width: 400px;
     text-transform: uppercase;
-    
+    // min-height: calc(100vh - 575px);
+
     &:hover {
       background-color: white;
       box-shadow: 6px 6px 1px black;
