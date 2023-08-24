@@ -3,6 +3,13 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        games.name ILIKE :query
+        OR games.description ILIKE :query
+      SQL
+      @games = @games.where(sql_subquery, query: "%#{params[:query]}%")
+    end
     @markers = @games.geocoded.map do |game|
       {
         lat: game.latitude,

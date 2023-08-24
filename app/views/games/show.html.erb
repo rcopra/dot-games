@@ -1,7 +1,6 @@
-
 <div class="header">
   <h1>hello</h1>
-   <p>Welcome to .games! Step back in time with our nostalgic 90's video game rentals. Immerse yourself in the pixelated wonderland of classic gaming, right from the comfort of your own home. </p>
+  <p>Welcome to .games! Step back in time with our nostalgic 90's video game rentals. Immerse yourself in the pixelated wonderland of classic gaming, right from the comfort of your own home.</p>
 </div>
 
 <div class="wrapper">
@@ -15,36 +14,34 @@
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
      </div>
-
-
     </ul>
   </div>
-<div class="content">
-<div class="show-card">    <img class="show-card__img" src="<%= @game.poster_url %>" alt="mario">
-  <div id="<%= dom_id @game %>">
-    <div class="show-card-info">
-      <h6>Title:</h6>
-      <p><%= @game.name %></p>
-      <h6>Description:</h6>
-      <p><%= @game.description %></p>
-      <h6>Price:</h6>
-      <p><%= @game.price %></p>
-    </div>
-    <%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
-  </div>
-    <div data-controller="toggle" class="my-5 ">
-      <a class="simple-form" data-action="click->toggle#fire">Book a game</a>
-       <div class="simple-form" data-toggle-target="togglableElement" class="d-none">
-        <%= simple_form_for [@game, @booking] do |f| %>
-          <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-          <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker' } } %>
-          <%= f.button :submit %>
-        <% end %>
+  <div class="content">
+    <div class="show-card">
+      <img class="show-card__img" src="<%= @game.poster_url %>" alt="mario">
+      <div id="<%= dom_id @game %>">
+        <div class="show-card-info">
+          <h6>Title:</h6>
+          <p><%= @game.name %></p>
+          <h6>Description:</h6>
+          <p><%= @game.description %></p>
+          <h6>Price:</h6>
+          <p><%= @game.price %></p>
+        </div>
+        <%#= cl_image_tag @game.photo.key, height: 300, crop: :fill %>
+      </div>
+      <div data-controller="toggle" class="my-5 ">
+        <a class="simple-form" data-action="click->toggle#fire">Book a game</a>
+        <div class="simple-form" data-toggle-target="togglableElement" class="d-none">
+          <%= simple_form_for [@game, @booking] do |f| %>
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: Date.today.strftime("%Y-%m-%d") } %>
+            <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: (Date.today + 5.days).strftime("%Y-%m-%d") } %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
       </div>
     </div>
 </div>
-
-
   </div>
   <%# <div class="footer">Footer</div> %>
 </div>
