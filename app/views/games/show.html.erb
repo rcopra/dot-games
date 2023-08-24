@@ -7,6 +7,7 @@
 <div class="wrapper">
   <div class="sidebar">
     <ul>
+     <%= link_to "Edit the game", edit_game_path(@game) %>
      <%= link_to "Back to games", games_path %>
      <%= link_to "Destroy this game", @game, method: :delete %>
     </ul>
@@ -35,6 +36,14 @@
       </div>
     </div>
 </div>
+
+<div style="width: 100%; height: 600px;"
+ data-controller="map"
+ data-map-markers-value="<%= @markers.to_json %>"
+ data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+
   </div>
   <%# <div class="footer">Footer</div> %>
 </div>
