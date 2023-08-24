@@ -18,7 +18,7 @@
   </div>
   <div class="content">
     <div class="show-card">
-      <img class="show-card__img" src="<%= @game.poster_url %>" alt="mario">
+<%= cl_image_tag(@game.photo.key) %>
       <div id="<%= dom_id @game %>">
         <div class="show-card-info">
           <h6>Title:</h6>

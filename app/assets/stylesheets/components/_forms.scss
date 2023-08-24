@@ -33,7 +33,7 @@
     font-weight: 700;
     border: 3px;
     border-color: #f700c6;
-    color: black;
+    color: white;
     padding: 8px;
     text-align: center;
     text-decoration: none;
@@ -53,6 +53,12 @@
         transition: .3s;
     }
   }
+  .btn {
+    color: white;
+    background-color: lightgrey;
+  }
+
+
 }
 
 .search-form {
