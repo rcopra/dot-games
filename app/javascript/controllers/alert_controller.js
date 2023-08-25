@@ -19,11 +19,10 @@ export default class extends Controller {
 
     Swal.fire({
       customClass: {
-        popup: 'border-radius-0'
-        cancelButton: '...'
+        popup: 'border-radius-0',
+        cancelButton: 'display-none'
       },
-
-      html: this.htmlValue,
+git      html: this.htmlValue,
       title: this.titleValue,
       showCancelButton: this.showCancelButtonValue,
       confirmButtonText: this.confirmButtonTextValue,
