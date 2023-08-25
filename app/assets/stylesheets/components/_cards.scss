@@ -62,7 +62,7 @@
   height: 400px;
   width: auto;
   margin: 0px 30px 30px 15px;
-
+  overflow: hidden;
 }
 
 .index-card-info {
@@ -82,6 +82,13 @@
       display: block;
       font-size: 12px;
       margin: 0px;
+      text-overflow: ellipsis; /* enables ellipsis */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      // white-space: nowrap; /* keeps the text in a single line */
+
     }
 
     a {
@@ -185,7 +192,7 @@
   object-fit: cover;
 }
 
-.homepage-card {
+.dashboard-card {
   box-shadow: 8px 8px 1px #00ed71;
   padding: 16px;
   text-align: center;
@@ -196,6 +203,11 @@
   margin: 25px 50px 25px 50px;
   justify-content: center;
   display: inline-block;
+
+  li::marker {
+   color:white;
+  }
+
 
     h6 {
       color: black;
@@ -215,24 +227,31 @@
     }
 
     a {
-      background-color: white;
+      background-color: black;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       border: none;
-      color:#f700c6;
-      padding: 10px;
+      color: white;
+      padding: 8px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 14px;
+      font-size: 12px;
       margin: 4px 2px;
       text-transform: uppercase;
 
+
       &:hover {
-        color: rgb(0, 0, 0);
-        text-decoration: underline;
+        background-color: white;
+        box-shadow: 6px 6px 1px black;
+        color: black;
         transition: .3s;
-        color:#f700c6
-      }
-   }
+    }
+    }
  }
+
+ .dashboard-card:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 10px 10px 2px #f700c6;
+  color:#f700c6
+}
