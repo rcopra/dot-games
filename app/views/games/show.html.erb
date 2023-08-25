@@ -49,14 +49,12 @@
           } do |f| %>
             <%= f.input :start_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: Date.today.strftime("%Y-%m-%d") } %>
             <%= f.input :end_date, as: :string, input_html: { data: { controller: 'datepicker', min_date: Date.today.strftime("%Y-%m-%d") }, value: (Date.today + 5.days).strftime("%Y-%m-%d") } %>
-            <%= f.button :submit %>
+           <button type="button" class="btn btn-light"><%= f.button :submit %></button>
           <% end %>
         </div>
       </div>
     </div>
-
-
 </div>
-  </div>
+</div>
   <%# <div class="footer">Footer</div> %>
 </div>

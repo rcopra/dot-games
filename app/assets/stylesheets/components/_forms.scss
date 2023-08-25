@@ -17,7 +17,6 @@
     transition: .3s;
   }
 
-
   p {
     text-align: center;
     justify-content: center;
@@ -36,10 +35,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    box-shadow: 2px 2px 2px 2px black;
+    // box-shadow: 2px 2px 2px 2px black;
     width: 500px;
     text-transform: uppercase;
-    min-height: 100vh;
+    min-height: 60vh;
 
     a {
       color: black;
@@ -54,6 +53,11 @@
     }
 
   }
+}
+
+.form-text {
+  color:white;
+  font-weight: 400px;
 }
 
 .search-form {
