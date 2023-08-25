@@ -34,7 +34,7 @@
             <%= link_to "Home", root_path %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjx_lBOAcPxS5K5ubTw8ediZTPsgJE8dKy1j2XVdde&s" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= asset_path('bowser_avatar.jpeg') %>" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if user_signed_in? == true %>
               <a class="dropdown-item" href="<%= dashboard_path %>">Dashboard</a>
