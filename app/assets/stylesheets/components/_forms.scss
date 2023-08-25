@@ -1,9 +1,7 @@
-
 .simple-form-booking  {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   border: 3px;
-  border-color: #f700c6;
   color: black;
   padding: 8px;
   text-align: center;
@@ -14,18 +12,17 @@
   width: 500px;
   text-transform: uppercase;
 
+  &:hover {
+    font-weight: 400;
+    transition: .3s;
+  }
 
-  a {
-    color: white;
-    text-decoration: none;
-
-    &:hover {
-      font-weight: 400;
-      transition: .3s;
+  p {
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
   }
 }
-}
-
 
 
 .simple-form  {
@@ -45,13 +42,15 @@
     min-height: 100vh;
 
     a {
-      color: white;
+      color: black;
+      background-color: white;
       text-decoration: none;
 
       &:hover {
         font-weight: 400;
         transition: .3s;
     }
+
   }
   .btn {
     color: white;
