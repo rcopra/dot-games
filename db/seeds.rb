@@ -79,7 +79,7 @@ games = [
     description: "Arrange falling blocks to create lines and clear the screen in this iconic puzzle game.",
     poster_url: "https://res.cloudinary.com/dglqz7zll/image/upload/v1692789807/tetris_zeyrxf.png",
     price: rand(10.0..50.0).round(2),
-    user_id: User.first.id,
+    user_id: User.last.id,
     address: "An den Treptowers 10, 12435 Berlin"
   },
   {
@@ -87,7 +87,7 @@ games = [
     description: "Infiltrate enemy bases and uncover a complex conspiracy in this stealth-action game.",
     poster_url: "https://res.cloudinary.com/dglqz7zll/image/upload/v1692789807/metalgear_c0u5iq.png",
     price: rand(10.0..50.0).round(2),
-    user_id: User.first.id,
+    user_id: User.last.id,
     address: "Sedanstr. 14, 12167 Berlin"
   }
 ]
