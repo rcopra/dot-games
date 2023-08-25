@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_game, only: %i[show edit update destroy]
 
   def index
@@ -44,7 +45,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    if current_user.id == @game.user_id
+    if current_user == @game.user
       if @game.update(game_params)
         redirect_to @game, notice: "Game was successfully updated.", status: :see_other
       else
@@ -54,7 +55,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @game.user_id
+    if current_user == @game.user
       @game.destroy
       redirect_to games_path, notice: "Game was successfully destroyed.", status: :see_other
     end
@@ -67,6 +68,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name, :description, :price, :photo)
+    params.require(:game).permit(:name, :description, :price, :photo, :address)
   end
 end
