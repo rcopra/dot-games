@@ -36,10 +36,10 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjx_lBOAcPxS5K5ubTw8ediZTPsgJE8dKy1j2XVdde&s" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="<%= dashboard_path(@user) %>">Dashboard</a>
-              <a class="dropdown-item" href="<%= new_user_session_path(@user) %>">Log in</a>
-              <a class="dropdown-item" href="<%= new_user_registration_path(@user) %>">Sign up</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path(@user) %>">Log out</a>
+              <a class="dropdown-item" href="<%= dashboard_path %>">Dashboard</a>
+              <a class="dropdown-item" href="<%= new_user_session_path %>">Log in</a>
+              <a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
             </div>
           </li>
           <!--li class="nav-item"-->
