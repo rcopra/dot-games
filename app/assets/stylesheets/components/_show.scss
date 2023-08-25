@@ -49,3 +49,42 @@
   }
 }
 }
+
+
+
+.sidebar-form {
+  padding-right: 350px;
+  width: 20%;
+
+  p {
+    color:white;
+    font-family: 'Anonymous Pro', monospace;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0px;
+  }
+
+  a {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border: none;
+    color: white;
+    padding: 0px 400px 8px 0px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    text-transform: uppercase;
+
+
+    &:hover {
+      // background-color: white;
+      // box-shadow: 6px 6px 1px black;
+      color: white;
+      font-weight: 300;
+      transition: .3s;
+  }
+}
+}

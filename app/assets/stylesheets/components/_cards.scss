@@ -184,3 +184,55 @@
   height: 300px;
   object-fit: cover;
 }
+
+.homepage-card {
+  box-shadow: 8px 8px 1px #00ed71;
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  justify-content: space-between;
+  width: auto;
+  min-height: 200px;
+  margin: 25px 50px 25px 50px;
+  justify-content: center;
+  display: inline-block;
+
+    h6 {
+      color: black;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      display: block;
+      margin: 4px 2px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color:black;
+      font-family: 'Anonymous Pro', monospace;
+      display: block;
+      padding: 7px
+    }
+
+    a {
+      background-color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      border: none;
+      color:#f700c6;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: rgb(0, 0, 0);
+        text-decoration: underline;
+        transition: .3s;
+        color:#f700c6
+      }
+   }
+ }
