@@ -1,29 +1,33 @@
-<div class="header" class="header-grid" >
-   <p>Welcome to .games, <%= current_user.email %> </p>
+<div class="header-dashboard">
+   <h1>Welcome to .games, <%= current_user.email %> </h1>
 </div>
+
+
   <div class="homepage-grid">
-    <div class="homepage-card">
+    <div class="dashboard-card">
       <h6>Your bookings</h6>
       <div id="user_bookings">
         <ul>
           <% @user_bookings.each do |user_booking| %>
             <li>
-              <%= user_booking.game.name %>, <%= user_booking.game.price %>, <%= user_booking.start_date %>, <%= user_booking.end_date %>
+             <p> 🍄 <%= user_booking.game.name %>, <%= user_booking.game.price %>, <%= user_booking.start_date %>, <%= user_booking.end_date %></p>
             </li>
           <% end %>
         </ul>
+            <%= link_to "Find another adventure", games_path %>
       </div>
     </div>
-    <div class="homepage-card">
+    <div class="dashboard-card">
       <h6>Your Games</h6>
         <div id="user_games">
           <ul>
             <% @user_games.each do |user_game| %>
               <li>
-                <%= user_game.name %>, <%= user_game.price %>, <%= user_game.description %>, <img src="<%= user_game.poster_url %>" alt="">
+              <p> 🍄  <%= user_game.name %>, <%= user_game.price %>, <%= user_game.description %>, <img src="<%= user_game.poster_url %>" alt=""></p>
               </li>
             <% end %>
           </ul>
+            <%= link_to "Sell more games",  new_game_path %>
         </div>
       </div>
     </div>

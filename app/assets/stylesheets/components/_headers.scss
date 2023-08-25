@@ -90,7 +90,28 @@
 
     p {
       text-align: center;
-      justify-content: center;  
+      justify-content: center;
+      // display: inline-block;
+    }
+  }
+}
+
+.header-dashboard {
+  h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    padding: 9px;
+    display: block;
+    margin: 4px 2px;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+
+    p {
+      text-align: center;
+      justify-content: center;
       // display: inline-block;
     }
   }
